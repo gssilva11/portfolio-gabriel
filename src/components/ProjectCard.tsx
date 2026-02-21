@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
 import { motion, useReducedMotion } from "framer-motion";
@@ -41,9 +42,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/35 to-transparent" />
       </div>
-
-      <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-
+      <h3 className="text-lg font-semibold text-white">
+        <Link href={`/projetos/${project.slug}`} className="transition hover:text-zinc-200">
+          {project.title}
+        </Link>
+      </h3>
       <p className="mt-2 text-sm leading-6 text-zinc-300">{project.summary}</p>
 
       <div className="mt-4 flex flex-wrap gap-2">
@@ -58,6 +61,13 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       </div>
 
       <div className="mt-5 flex flex-wrap gap-3">
+        <Link
+          href={`/projetos/${project.slug}`}
+          className="rounded-lg border border-white/15 px-3 py-2 text-sm text-zinc-100 transition hover:bg-white/10"
+        >
+          Ver detalhes
+        </Link>
+
         {project.links.demo ? (
           <a
             href={project.links.demo}

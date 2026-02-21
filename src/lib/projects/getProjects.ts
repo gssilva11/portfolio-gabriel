@@ -17,3 +17,7 @@ export function getFeaturedProjects() {
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug && project.isPublished);
 }
+
+export function getPublishedProjectSlugs() {
+  return getPublishedProjects().map((project) => project.slug);
+}
