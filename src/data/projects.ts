@@ -14,7 +14,6 @@ export type Project = {
   featured: boolean;
   displayOrder: number;
 
-  // Campos para página detalhada
   status?: "Concluído" | "Em evolução";
   role?: string;
   year?: string;
@@ -94,7 +93,7 @@ export const projects: Project[] = [
     summary:
       "Projeto para cálculo de sub-redes com frontend em React e backend em Express, com objetivo de aprendizado e utilidade prática.",
     description:
-      "Ferramenta de estudo e uso prático para cálculo de sub-redes, com foco em clareza na apresentação de resultados e reforço de conceitos de redes. Projeto pensado para unir utilidade técnica e prática de desenvolvimento web.",
+      "Ferramenta de estudo e uso prático para cálculo de sub-redes, com foco em clareza na apresentação de resultados e reforço de conceitos de redes.",
     tags: ["React", "Express", "MongoDB"],
     imagePath: "/projects/subnet-calculator-cover.png",
     links: {

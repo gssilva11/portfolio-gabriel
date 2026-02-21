@@ -2,14 +2,10 @@ import Link from "next/link";
 
 export default function ProjectNotFound() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-950 px-4 text-zinc-100">
-      <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
-        <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">
-          Projeto
-        </p>
-        <h1 className="mt-2 text-2xl font-semibold text-white">
-          Projeto não encontrado
-        </h1>
+    <div className="mx-auto flex min-h-[70vh] w-full max-w-lg items-center justify-center px-4">
+      <div className="w-full rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
+        <p className="text-xs uppercase tracking-[0.18em] text-zinc-400">Projeto</p>
+        <h1 className="mt-2 text-2xl font-semibold text-white">Projeto não encontrado</h1>
         <p className="mt-4 leading-7 text-zinc-300">
           O projeto que você tentou acessar não existe ou ainda não está publicado.
         </p>
@@ -23,6 +19,6 @@ export default function ProjectNotFound() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

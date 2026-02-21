@@ -36,17 +36,19 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           />
         ) : (
           <div className="flex h-full items-center justify-center">
-            <span className="text-sm text-zinc-400">Screenshot do projeto (futuro)</span>
+            <span className="text-sm text-zinc-400">Screenshot do projeto</span>
           </div>
         )}
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/35 to-transparent" />
       </div>
+
       <h3 className="text-lg font-semibold text-white">
         <Link href={`/projetos/${project.slug}`} className="transition hover:text-zinc-200">
           {project.title}
         </Link>
       </h3>
+
       <p className="mt-2 text-sm leading-6 text-zinc-300">{project.summary}</p>
 
       <div className="mt-4 flex flex-wrap gap-2">
