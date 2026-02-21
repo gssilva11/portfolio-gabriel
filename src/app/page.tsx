@@ -1,6 +1,9 @@
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
+import { profile } from "@/data/profile";
 
 export default function Home() {
   return (
@@ -13,6 +16,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ProjectsSection />
+      <SkillsSection />
 
       <section id="sobre" className="mx-auto w-full max-w-6xl px-4 py-16 md:py-20">
         <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
@@ -26,6 +30,7 @@ export default function Home() {
             Agora estou reconstruindo essa base com prática real, disciplina e projetos aplicados.
             Este portfólio é parte desse processo — e também a minha vitrine profissional.
           </p>
+          <p className="mt-4 max-w-4xl leading-7 text-zinc-400">{profile.shortBio}</p>
         </div>
       </section>
 
@@ -38,15 +43,17 @@ export default function Home() {
           <p className="mt-4 text-zinc-300">
             Você pode entrar em contato comigo pelo e-mail{" "}
             <a
-              href="mailto:gssilva2711@gmail.com"
+              href={`mailto:${profile.email}`}
               className="font-medium text-white underline decoration-white/30 underline-offset-4 hover:decoration-white"
             >
-              gssilva2711@gmail.com
+              {profile.email}
             </a>
             .
           </p>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

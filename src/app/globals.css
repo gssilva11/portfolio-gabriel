@@ -28,3 +28,11 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
