@@ -4,6 +4,8 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { profile } from "@/data/profile";
+import { getProjectBySlug, getPublishedProjectSlugs, getProjectNavBySlug } from "@/lib/projects/getProjects";
+import { ProjectNav } from "@/components/ProjectNav";
 
 export default function Home() {
   return (

@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProjectBySlug, getPublishedProjectSlugs } from "@/lib/projects/getProjects";
+
+import { ProjectNav } from "@/components/ProjectNav";
+import {
+  getProjectBySlug,
+  getProjectNavBySlug,
+  getPublishedProjectSlugs,
+} from "@/lib/projects/getProjects";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -28,9 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
 
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
+
+  const { prev, next } = getProjectNavBySlug(slug);
 
   return (
     <div className="mx-auto w-full max-w-5xl px-4 py-10 md:py-14">
@@ -59,6 +67,7 @@ export default async function ProjectPage({ params }: Props) {
               <span className="text-sm text-zinc-400">Imagem do projeto</span>
             </div>
           )}
+
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
 
@@ -77,10 +86,12 @@ export default async function ProjectPage({ params }: Props) {
                 <dt className="text-zinc-400">Status</dt>
                 <dd className="text-zinc-100">{project.status ?? "—"}</dd>
               </div>
+
               <div className="flex items-center justify-between gap-3">
                 <dt className="text-zinc-400">Ano</dt>
                 <dd className="text-zinc-100">{project.year ?? "—"}</dd>
               </div>
+
               <div className="flex items-center justify-between gap-3">
                 <dt className="text-zinc-400">Slug</dt>
                 <dd className="text-zinc-100">{project.slug}</dd>
@@ -158,6 +169,9 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Navegação anterior/próximo */}
+      <ProjectNav prev={prev} next={next} />
     </div>
   );
 }

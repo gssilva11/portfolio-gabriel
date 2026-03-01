@@ -14,8 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Gabriel Santos | Portfólio",
-  description:
-    "Portfólio de Gabriel Santos, com projetos em React, TypeScript, Node.js e desenvolvimento web.",
+  description: "Portfólio de Gabriel Santos, com projetos em React, TypeScript, Node.js e desenvolvimento web.",
+  metadataBase: new URL("https://portfolio-gabriel-zeta.vercel.app"),
+  openGraph: {
+    title: "Gabriel Santos | Portfólio",
+    description: "Portfólio de Gabriel Santos, com projetos em React, TypeScript, Node.js e desenvolvimento web.",
+    url: "https://portfolio-gabriel-zeta.vercel.app",
+    siteName: "Portfólio Gabriel Santos",
+    locale: "pt_BR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -33,3 +41,4 @@ export default function RootLayout({
     </html>
   );
 }
+
